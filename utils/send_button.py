@@ -13,10 +13,22 @@ def send_webapp_button(chat_id):
             "inline_keyboard": [
                 [
                     {
-                        "text": "Magazin",
+                        "text": "🛍 Magazin",
                         "web_app": {
                             "url": f"{BASE_URL}"
                         }
+                    }
+                ],
+                [
+                    {
+                        "text": "🛒 Buyurtmalarim",
+                        "web_app": {
+                            "url": f"{BASE_URL}/profile/orders"
+                        }
+                    },
+                    {
+                        "text": "📞 Bog'lanish",
+                        "callback_data": "contact_info"
                     }
                 ]
             ]
@@ -26,6 +38,11 @@ def send_webapp_button(chat_id):
     
     if not response.ok:
         print("❌ Inline tugma yuborishda xatolik:", response.text)
+
+
+
+
+
 
 
 def set_menu_webapp():
